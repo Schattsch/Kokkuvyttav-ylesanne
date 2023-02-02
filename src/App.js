@@ -2,8 +2,8 @@ import React, {useState} from "react";
 
 import './App.css';
 
-import Expenses from "./components/Expenses/Expenses";
-import NewExpense from "./components/NewExpense/NewExpense";
+import ToDo from "./components/Expenses/ToDo";
+import NewToDo from "./components/NewExpense/NewToDo";
 
 const DUMMY_EXPENSES = [
     {
@@ -42,8 +42,8 @@ const App = () => {
 
     return (
     <div className="App">
-        <NewExpense onAddExpense={addExpensehandler}></NewExpense>
-        <Expenses expenses={expenses}></Expenses>
+        <NewToDo onAddExpense={addExpensehandler}></NewToDo>
+        <ToDo expenses={expenses}></ToDo>
     </div>
   );
 }

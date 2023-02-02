@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-import './ExpenseItem.css'
-import ExpenseDate from "./ExpenseDate";
+import './ToDoItem.css'
+import ToDoDate from "./ToDoDate";
 import Card from "../UI/Card"
 
-const ExpenseItem = (props) => {
+const ToDoItem = (props) => {
 
     return (
         <Card className="expense-item">
-            <ExpenseDate date={props.date}></ExpenseDate>
+            <ToDoDate date={props.date}></ToDoDate>
             <div className="expense-item__description">
                 <h2>{props.title}</h2>
                 <div className="expense-item__price">{props.amount}</div>
@@ -17,4 +17,4 @@ const ExpenseItem = (props) => {
     )
 }
 
-export default ExpenseItem
+export default ToDoItem

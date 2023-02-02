@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './ExpensesFilter.css';
+import './ToDoFilter.css';
 
-const ExpensesFilter = (props) => {
+const ToDoFilter = (props) => {
     return (
         <div className='expenses-filter'>
             <div className='expenses-filter__control'>
@@ -17,4 +17,4 @@ const ExpensesFilter = (props) => {
     );
 };
 
-export default ExpensesFilter;
+export default ToDoFilter;
