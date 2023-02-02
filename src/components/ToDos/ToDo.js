@@ -16,17 +16,17 @@ function ToDo(props) {
         setFilteredYear(year)
     }
 
-    const filteredExpenses = props.expenses.filter((expense) => {
-        return expense.date.getFullYear().toString() === filteredYear
+    const filteredToDos = props.todos.filter((todo) => {
+        return todo.date.getFullYear().toString() === filteredYear
     })
 
 
 
 
     return (
-        <Card className="expenses">
+        <Card className="todos">
             <ToDoFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></ToDoFilter>
-            <ToDoList filteredExpenses={filteredExpenses}></ToDoList>
+            <ToDoList filteredToDos={filteredToDos}></ToDoList>
         </Card>
     )
 }

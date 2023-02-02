@@ -19,12 +19,12 @@ const ToDoForm = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        const expenseData = {
+        const todoData = {
             title: enteredTitle,
             date: new Date(enteredDate),
             priority: enteredPriority
         }
-        props.onSaveExpenseData(expenseData)
+        props.onSaveToDoData(todoData)
         setEnteredTitle('')
         setEnteredDate('')
         setEnteredPriority('')
@@ -32,18 +32,18 @@ const ToDoForm = (props) => {
 
     return (
         <form onSubmit={submitHandler}>
-            <div className="new-expense__controls">
-                <div className="new-expense__control">
+            <div className="new-todo__controls">
+                <div className="new-todo__control">
                     <label>New Task</label>
                     <input type="text"
                            onChange={titleChangeHandler} value={enteredTitle}/>
                 </div>
-                <div className="new-expense__control">
+                <div className="new-todo__control">
                     <label>Date</label>
                     <input type="date" min="2023-01-18" max="2025-12-31"
                            onChange={dateChangeHandler} value={enteredDate}/>
                 </div>
-                <div className="new-expense__control">
+                <div className="new-todo__control">
                     <label>Select task priority</label>
                     <select onChange={priorityChangeHandler} value={enteredPriority}>
                         <option value="low">Low</option>
@@ -52,7 +52,7 @@ const ToDoForm = (props) => {
                     </select>
                 </div>
             </div>
-            <div className="new-expense__actions">
+            <div className="new-todo__actions">
                 <button type="submit">Add Task</button>
             </div>
         </form>

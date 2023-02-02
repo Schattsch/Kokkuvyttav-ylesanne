@@ -4,8 +4,8 @@ import './ToDoFilter.css';
 
 const ToDoFilter = (props) => {
     return (
-        <div className='expenses-filter'>
-            <div className='expenses-filter__control'>
+        <div className='todos-filter'>
+            <div className='todos-filter__control'>
                 <label>Filter by year</label>
                 <select value={props.selected} onChange={(event) => props.onChangeFilter(event.target.value)}>
                     <option value='2023'>2023</option>

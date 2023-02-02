@@ -1,51 +1,48 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import './App.css';
+import "./App.css";
 
-import ToDo from "./components/Expenses/ToDo";
-import NewToDo from "./components/NewExpense/NewToDo";
+import ToDo from "./components/ToDos/ToDo";
+import NewToDo from "./components/NewToDo/NewToDo";
 
 const DUMMY_EXPENSES = [
     {
-        id: 'e1',
-        date: new Date(2024,0,10),
-        title: 'New book',
-        amount: 30.99
+        id: "e1",
+        date: new Date(2024, 0, 10),
+        title: "New book",
+        priority: "Low",
     },
     {
-        id: 'e2',
-        date: new Date(2024,0,10),
-        title: 'New jeans',
-        amount: 99.99
+        id: "e2",
+        date: new Date(2024, 0, 10),
+        title: "New jeans",
+        priority: "Medium",
     },
     {
-        id: 'e3',
-        date: new Date(2023,0,18),
-        title: 'New bag',
-        amount: 199.99
-    }
-]
+        id: "e3",
+        date: new Date(2023, 0, 18),
+        title: "New bag",
+        priority: "High",
+    },
+];
 const App = () => {
-    const [expenses, setExpenses] = useState (DUMMY_EXPENSES)
-    const [filteredYear, setFilteredYear] = useState('2023')
-    const filterChangeHandler = (year) => {
-        setFilteredYear(year)
-    }
-
-    const addExpensehandler = (expense) => {
-        console.log('In App.js')
-        setExpenses((previousExpenses) => {
-            return [expense, ...previousExpenses]
-        })
-    }
-    console.log(expenses)
+    const [todos, setToDos] = useState(DUMMY_EXPENSES);
+    const [enteredPriority, setEnteredPriority] = useState("Low");
+    const addToDoHandler = (todo) => {
+        console.log("In App.js");
+        setToDos((previousToDos) => {
+            return [...previousToDos, todo];
+        });
+    };
+    console.log(todos);
 
     return (
-    <div className="App">
-        <NewToDo onAddExpense={addExpensehandler}></NewToDo>
-        <ToDo expenses={expenses}></ToDo>
-    </div>
-  );
-}
+        <div className="App">
+            <NewToDo onAddToDo={addToDoHandler} priority={enteredPriority} onPriorityChange={(priority) => setEnteredPriority(priority)} />
+            <ToDo todos={todos} />
+        </div>
+    );
+
+};
 
 export default App;

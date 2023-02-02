@@ -1,9 +1,9 @@
-.expenses-filter {
+.todos-filter {
     color: white;
     padding: 0 1rem;
 }
 
-.expenses-filter__control {
+.todos-filter__control {
     display: flex;
     width: 100%;
     align-items: center;
@@ -11,12 +11,12 @@
     margin: 1rem 0;
 }
 
-.expenses-filter label {
+.todos-filter label {
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-.expenses-filter select {
+.todos-filter select {
     font: inherit;
     padding: 0.5rem 3rem;
     font-weight: bold;
