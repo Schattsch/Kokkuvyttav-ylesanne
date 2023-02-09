@@ -28,7 +28,7 @@ const DUMMY_TODOS = [
 
 const App = () => {
     const [todos, setToDos] = useState(DUMMY_TODOS);
-    const [enteredPriority, setEnteredPriority] = useState("Low");
+    const [enteredPriority, setEnteredPriority] = useState("All");
     const addToDoHandler = (todo) => {
         console.log("In App.js");
         setToDos((previousToDos) => {
