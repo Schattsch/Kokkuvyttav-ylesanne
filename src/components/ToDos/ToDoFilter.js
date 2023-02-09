@@ -4,7 +4,6 @@ import './ToDoFilter.css';
 
 const ToDoFilter = (props) => {
     const [selectedValue, setSelectedValue] = useState('all');
-
     const handleFilterClick = () => {
         const nextValue = selectedValue === 'all' ? 'high' :
             selectedValue === 'high' ? 'medium' :

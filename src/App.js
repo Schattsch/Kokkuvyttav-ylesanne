@@ -5,7 +5,7 @@ import "./App.css";
 import ToDo from "./components/ToDos/ToDo";
 import NewToDo from "./components/NewToDo/NewToDo";
 
-const DUMMY_EXPENSES = [
+const DUMMY_TODOS = [
     {
         id: "e1",
         date: new Date(2024, 0, 10),
@@ -25,8 +25,9 @@ const DUMMY_EXPENSES = [
         priority: "High",
     },
 ];
+
 const App = () => {
-    const [todos, setToDos] = useState(DUMMY_EXPENSES);
+    const [todos, setToDos] = useState(DUMMY_TODOS);
     const [enteredPriority, setEnteredPriority] = useState("Low");
     const addToDoHandler = (todo) => {
         console.log("In App.js");
@@ -36,13 +37,16 @@ const App = () => {
     };
     console.log(todos);
 
+    const handlePriorityChange = (priority) => {
+        setEnteredPriority(priority);
+    }
+
     return (
         <div className="App">
-            <NewToDo onAddToDo={addToDoHandler} priority={enteredPriority} onPriorityChange={(priority) => setEnteredPriority(priority)} />
-            <ToDo todos={todos} />
+            <NewToDo onAddToDo={addToDoHandler} priority={enteredPriority} onPriorityChange={handlePriorityChange} />
+            <ToDo todos={todos} enteredPriority={enteredPriority} />
         </div>
     );
-
 };
 
 export default App;
