@@ -8,7 +8,6 @@ import ToDoList from "./ToDoList";
 
 function ToDo(props) {
     const [filteredYear, setFilteredYear] = useState('2023')
-    console.log('Year data in ToDo.js' + filteredYear)
 
     const filterChangeHandler = (year) => {
         console.log('Filter change handled by ToDo.js')

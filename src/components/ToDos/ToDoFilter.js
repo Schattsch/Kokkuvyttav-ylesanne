@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './ToDoFilter.css';
 
 const ToDoFilter = (props) => {
+    const [selectedValue, setSelectedValue] = useState('all');
+
+    const handleFilterClick = () => {
+        const nextValue = selectedValue === 'all' ? 'high' :
+            selectedValue === 'high' ? 'medium' :
+                selectedValue === 'medium' ? 'low' : 'all';
+        setSelectedValue(nextValue);
+        props.onChangeFilter(nextValue);
+    };
+
     return (
-        <div className='todos-filter'>
-            <div className='todos-filter__control'>
-                <label>Filter by year</label>
-                <select value={props.selected} onChange={(event) => props.onChangeFilter(event.target.value)}>
-                    <option value='2023'>2023</option>
-                    <option value='2024'>2024</option>
-                    <option value='2025'>2025</option>
-                </select>
+        <div className="todos-filter">
+            <div className="todos-filter__control">
+                <label>Filter by priority</label>
+                <button className="todos-filter__button" onClick={handleFilterClick}>
+                    {selectedValue}
+                </button>
             </div>
         </div>
     );
