@@ -1,52 +1,44 @@
-import React, { useState } from "react";
+import './App.css'
+import Tasks from "./components/Tasks/Tasks";
+import NewTask from "./components/NewTasks/NewTask";
+import React, {useState} from "react";
 
-import "./App.css";
-
-import ToDo from "./components/ToDos/ToDo";
-import NewToDo from "./components/NewToDo/NewToDo";
-
-const DUMMY_TODOS = [
+const DUMMY_TASKS = [
     {
-        id: "e1",
-        date: new Date(2024, 0, 10),
-        title: "New book",
-        priority: "Low",
+        id: 'e1',
+        date: new Date(2023, 12, 11),
+        title: "Eat breakfast",
+        priority: 4
     },
     {
-        id: "e2",
-        date: new Date(2024, 0, 10),
-        title: "New jeans",
-        priority: "Medium",
-    },
-    {
-        id: "e3",
-        date: new Date(2023, 0, 18),
-        title: "New bag",
-        priority: "High",
-    },
-];
+        id: 'e2',
+        date: new Date(2023, 3, 5),
+        title: "Do homework",
+        priority: 1
+    }
+]
 
 const App = () => {
-    const [todos, setToDos] = useState(DUMMY_TODOS);
-    const [enteredPriority, setEnteredPriority] = useState("All");
-    const addToDoHandler = (todo) => {
-        console.log("In App.js");
-        setToDos((previousToDos) => {
-            return [...previousToDos, todo];
-        });
-    };
-    console.log(todos);
-
-    const handlePriorityChange = (priority) => {
-        setEnteredPriority(priority);
+    const [currentPriority, setCurrentPriority] = useState(0)
+    const [tasks, setTasks] = useState(DUMMY_TASKS)
+    const addTaskHandler = (task) => {
+        console.log("Received in App.js")
+        setTasks((previousTasks) => {
+            return [task, ...tasks]
+        })
     }
 
+    const changePriorityHandler = (priority) => {
+        setCurrentPriority((previousPriority) => {
+            return priority
+        })
+    }
     return (
         <div className="App">
-            <NewToDo onAddToDo={addToDoHandler} priority={enteredPriority} onPriorityChange={handlePriorityChange} />
-            <ToDo todos={todos} enteredPriority={enteredPriority} />
+            <NewTask onAddTask={addTaskHandler}></NewTask>
+            <Tasks onChangePriority={changePriorityHandler} tasks={tasks} currentPriority={currentPriority}/>
         </div>
-    );
-};
+    )
+}
 
-export default App;
+export default App

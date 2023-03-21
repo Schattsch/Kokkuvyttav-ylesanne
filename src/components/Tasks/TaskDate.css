@@ -1,0 +1,12 @@
+.task-date {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border: 1px solid #ececec;
+    background-color: #40005d;
+    color: white;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+}

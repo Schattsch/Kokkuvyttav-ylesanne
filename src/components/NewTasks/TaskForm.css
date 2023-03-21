@@ -1,0 +1,51 @@
+.new-task__controls {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.new-task__control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.new-task__control label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.new-task__control input,
+.new-task__control select {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.new-task__control * {
+    width: 100%;
+}
+
+.new-task__actions {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.new-task__control-wrapper {
+    width: 100%;
+}
+
+.new-task__control select {
+    width: 102.3%;
+    box-sizing: border-box;
+}
+

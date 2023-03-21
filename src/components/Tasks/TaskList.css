@@ -1,9 +1,9 @@
-.todos-list {
+.task-list {
     list-style: none;
     padding: 0;
 }
 
-.todos-list__fallback {
-    color: #40005d;
+.task-list__fallback {
+    color: white;
     text-align: center;
 }
